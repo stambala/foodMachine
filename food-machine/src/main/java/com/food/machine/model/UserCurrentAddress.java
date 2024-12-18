@@ -10,11 +10,11 @@ public class UserCurrentAddress {
 	
 	private String cityName;
 	
-	private String areaNasme;
+	private String areaName;
 	
-	private String streetName;
+	private String streetNameOrNumber;
 	
-	private String zipcode;
+	private long zipcode;
 	
 
 }

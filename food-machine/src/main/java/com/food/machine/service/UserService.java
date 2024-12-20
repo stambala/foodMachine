@@ -1,20 +1,16 @@
 package com.food.machine.service;
 
-import java.util.List;
-
-import org.springframework.http.ResponseEntity;
-
-//import org.springframework.stereotype.Service;
-
 import com.food.machine.entity.UserDataEntity;
+
+import java.util.List;
 
 //@Service
 public interface UserService {
 
-	UserDataEntity savePersons(UserDataEntity userdataEntity);
-	
-	UserDataEntity getByUserId(Integer id);
-	
-	List<UserDataEntity> getAllData();
-	
+    UserDataEntity savePersons(UserDataEntity userdataEntity);
+
+    UserDataEntity getByUserId(String id);
+
+    List<UserDataEntity> getAllData();
+
 }

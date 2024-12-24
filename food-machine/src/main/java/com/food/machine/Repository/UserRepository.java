@@ -10,5 +10,3 @@ import java.util.Optional;
 public interface UserRepository extends JpaRepository<UserDataEntity, String> {
     Optional<UserDataEntity> findById(String id);
 }
-
-

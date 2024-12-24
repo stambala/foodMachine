@@ -12,8 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import java.util.List;
+import java.util.Optional;
 
 @Slf4j
 @RestController
@@ -40,5 +43,27 @@ public class FoodMachineController {
     public ResponseEntity<List<UserDataEntity>> getAllData() {
         log.info("Method executed successfully");
         return ResponseEntity.ok(userServiceImpl.getAllData());
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<UserDataEntity> updateItem(@PathVariable String id, @RequestBody UserDataEntity userDataEntity) {
+        Optional<UserDataEntity> optionalItem = userServiceImpl.updateItem(id, userDataEntity);
+        if (optionalItem.isPresent()) {
+            log.info("Data updated successfully");
+            return ResponseEntity.ok(optionalItem.get());
+        } else {
+            log.info("No data found");
+            return ResponseEntity.notFound().build();
+        }
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<String> deleteItem(@PathVariable String id) {
+        boolean isDeleted = userServiceImpl.deleteUser(id);
+        if (isDeleted) {
+            return ResponseEntity.ok("Item deleted successfully.");
+        } else {
+            return ResponseEntity.status(404).body("Item not found.");
+        }
     }
 }

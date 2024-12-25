@@ -42,4 +42,31 @@ public class UserServiceImpl implements UserService {
         return userRepository.findAll();
     }
 
+    @Override
+    public Optional<UserDataEntity> updateItem(String id, UserDataEntity userDataEntity) {
+        Optional<UserDataEntity> optionalItem = userRepository.findById(id);
+        if (optionalItem.isPresent()) {
+            UserDataEntity existingItem = optionalItem.get();
+            existingItem.setFoodItems(userDataEntity.getFoodItems());
+            existingItem.setFoodQuantity(userDataEntity.getFoodQuantity());
+            existingItem.setUserBiometric(userDataEntity.isUserBiometric());
+            existingItem.setFoodDamageOrNot(userDataEntity.getFoodDamageOrNot());
+            existingItem.setId(userDataEntity.getId());
+            userRepository.save(existingItem);
+            return Optional.of(existingItem);
+        } else {
+            return Optional.empty();
+        }
+    }
+
+    @Override
+    public boolean deleteUser(String id) {
+        if (userRepository.existsById(id)) {
+            userRepository.deleteById(id);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 }

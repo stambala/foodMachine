@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: Food-Items
+  datasource:
+    url: jdbc:h2:~/data/testdb
+    userName : sa
+    password: sa
+  jpa:
+    database-platform : org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto : update
+server:
+  port: 9002
+springdoc:
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+logging:
+  level:
+    org:
+      springdoc: DEBUG

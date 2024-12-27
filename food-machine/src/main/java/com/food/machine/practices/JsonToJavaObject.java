@@ -7,7 +7,7 @@ import lombok.Setter;
 @Setter
 public class JsonToJavaObject {
 
-    private int id;
+    private Integer id;
 
     private String name;
 
@@ -19,24 +19,48 @@ public class JsonToJavaObject {
 
     private String gender;
 
-    public void setId(int id) {
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setAddress(String adddress) {
-        this.address = adddress;
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getCountry() {
+        return country;
     }
 
     public void setCountry(String country) {
         this.country = country;
     }
 
+    public long getMobileNumber() {
+        return mobileNumber;
+    }
+
     public void setMobileNumber(long mobileNumber) {
         this.mobileNumber = mobileNumber;
+    }
+
+    public String getGender() {
+        return gender;
     }
 
     public void setGender(String gender) {

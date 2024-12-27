@@ -2,7 +2,8 @@ package com.food.machine.service;
 
 import com.food.machine.Repository.UserRepository;
 import com.food.machine.entity.UserDataEntity;
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,11 +12,13 @@ import java.util.Optional;
 
 
 @Service
-@Slf4j
+//@Slf4j
 public class UserServiceImpl implements UserService {
 
     @Autowired
     UserRepository userRepository;
+
+    private static final Logger log = LoggerFactory.getLogger(UserServiceImpl.class);
 
     @Override
     public UserDataEntity savePersons(UserDataEntity userdataEntity) {
@@ -25,7 +28,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UserDataEntity getByUserId(String id) {
+    public UserDataEntity getByUserId(Integer id) {
         Optional<UserDataEntity> optional = userRepository.findById(id);
         if (optional.isPresent()) {
             log.info("Data found with id {}", id);
@@ -43,7 +46,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Optional<UserDataEntity> updateItem(String id, UserDataEntity userDataEntity) {
+    public Optional<UserDataEntity> updateItem(Integer id, UserDataEntity userDataEntity) {
         Optional<UserDataEntity> optionalItem = userRepository.findById(id);
         if (optionalItem.isPresent()) {
             UserDataEntity existingItem = optionalItem.get();
@@ -60,7 +63,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean deleteUser(String id) {
+    public boolean deleteUser(Integer id) {
         if (userRepository.existsById(id)) {
             userRepository.deleteById(id);
             return true;

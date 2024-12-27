@@ -9,12 +9,12 @@ public interface UserService {
 
     UserDataEntity savePersons(UserDataEntity userdataEntity);
 
-    UserDataEntity getByUserId(String id);
+    UserDataEntity getByUserId(Integer id);
 
     List<UserDataEntity> getAllData();
 
-    Optional<UserDataEntity> updateItem(String id, UserDataEntity userDataEntity);
+    Optional<UserDataEntity> updateItem(Integer id, UserDataEntity userDataEntity);
 
-    boolean deleteUser(String id);
+    boolean deleteUser(Integer id);
 
 }

@@ -13,6 +13,7 @@ import java.util.Optional;
 
 @Service
 //@Slf4j
+@SuppressWarnings("All")
 public class UserServiceImpl implements UserService {
 
     @Autowired

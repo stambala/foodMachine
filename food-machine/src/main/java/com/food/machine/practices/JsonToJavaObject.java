@@ -1,81 +1,183 @@
 package com.food.machine.practices;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
+@SuppressWarnings("ALL")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class JsonToJavaObject {
 
-    private Integer id;
+    private boolean userBiometric;
 
-    private String name;
+    private String foodItems;
 
-    private String address;
+    private double foodQuantity;
 
-    private String country;
+    private String foodDamageOrNot;
 
-    private long mobileNumber;
+    private String location;
 
-    private String gender;
+    private String expiryDate;
 
-    public Integer getId() {
-        return id;
+    private String preparedBy;
+
+    private String ingredients;
+
+    private double temperature;
+
+    private String packageType;
+
+    private String deliveryMode;
+
+    private boolean isOrganic;
+
+    private int calories;
+
+    private int servings;
+
+    private String feedback;
+
+    public boolean isUserBiometric() {
+        return userBiometric;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setUserBiometric(boolean userBiometric) {
+        this.userBiometric = userBiometric;
     }
 
-    public String getName() {
-        return name;
+    public String getFoodItems() {
+        return foodItems;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setFoodItems(String foodItems) {
+        this.foodItems = foodItems;
     }
 
-    public String getAddress() {
-        return address;
+    public double getFoodQuantity() {
+        return foodQuantity;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setFoodQuantity(double foodQuantity) {
+        this.foodQuantity = foodQuantity;
     }
 
-    public String getCountry() {
-        return country;
+    public String getFoodDamageOrNot() {
+        return foodDamageOrNot;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
+    public void setFoodDamageOrNot(String foodDamageOrNot) {
+        this.foodDamageOrNot = foodDamageOrNot;
     }
 
-    public long getMobileNumber() {
-        return mobileNumber;
+    public String getLocation() {
+        return location;
     }
 
-    public void setMobileNumber(long mobileNumber) {
-        this.mobileNumber = mobileNumber;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
-    public String getGender() {
-        return gender;
+    public String getExpiryDate() {
+        return expiryDate;
     }
 
-    public void setGender(String gender) {
-        this.gender = gender;
+    public void setExpiryDate(String expiryDate) {
+        this.expiryDate = expiryDate;
+    }
+
+    public String getPreparedBy() {
+        return preparedBy;
+    }
+
+    public void setPreparedBy(String preparedBy) {
+        this.preparedBy = preparedBy;
+    }
+
+    public String getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(String ingredients) {
+        this.ingredients = ingredients;
+    }
+
+    public double getTemperature() {
+        return temperature;
+    }
+
+    public void setTemperature(double temperature) {
+        this.temperature = temperature;
+    }
+
+    public String getPackageType() {
+        return packageType;
+    }
+
+    public void setPackageType(String packageType) {
+        this.packageType = packageType;
+    }
+
+    public String getDeliveryMode() {
+        return deliveryMode;
+    }
+
+    public void setDeliveryMode(String deliveryMode) {
+        this.deliveryMode = deliveryMode;
+    }
+
+    public boolean isOrganic() {
+        return isOrganic;
+    }
+
+    public void setOrganic(boolean organic) {
+        isOrganic = organic;
+    }
+
+    public int getCalories() {
+        return calories;
+    }
+
+    public void setCalories(int calories) {
+        this.calories = calories;
+    }
+
+    public int getServings() {
+        return servings;
+    }
+
+    public void setServings(int servings) {
+        this.servings = servings;
+    }
+
+    public String getFeedback() {
+        return feedback;
+    }
+
+    public void setFeedback(String feedback) {
+        this.feedback = feedback;
     }
 
     @Override
     public String toString() {
-        return "JsonToJavaObject{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", country='" + country + '\'' +
-                ", mobileNumber=" + mobileNumber +
-                ", gender='" + gender + '\'' +
+        return "FoodItem{" +
+                "userBiometric=" + userBiometric +
+                ", foodItems='" + foodItems + '\'' +
+                ", foodQuantity=" + foodQuantity +
+                ", foodDamageOrNot='" + foodDamageOrNot + '\'' +
+                ", location='" + location + '\'' +
+                ", expiryDate='" + expiryDate + '\'' +
+                ", preparedBy='" + preparedBy + '\'' +
+                ", ingredients='" + ingredients + '\'' +
+                ", temperature=" + temperature +
+                ", packageType='" + packageType + '\'' +
+                ", deliveryMode='" + deliveryMode + '\'' +
+                ", isOrganic=" + isOrganic +
+                ", calories=" + calories +
+                ", servings=" + servings +
+                ", feedback='" + feedback + '\'' +
                 '}';
     }
 }

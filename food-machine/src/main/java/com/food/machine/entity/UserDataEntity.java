@@ -7,6 +7,7 @@ import jakarta.persistence.Id;
 import org.antlr.v4.runtime.misc.NotNull;
 
 @Entity
+@SuppressWarnings("All")
 public class UserDataEntity {
 
     @Id

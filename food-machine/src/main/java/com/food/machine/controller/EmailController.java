@@ -14,8 +14,8 @@ public class EmailController {
     private EmailServiceImpl emailService;
 
     @GetMapping("/send-email-with-attachment")
-    public String sendEmailWithAttachment(@RequestParam String to, @RequestParam String subject, @RequestParam String text, @RequestParam String attachmentPath) throws MessagingException {
-        emailService.sendEmailWithAttachment(to, subject, text, attachmentPath);
+    public String sendEmailWithAttachment(@RequestParam String to, @RequestParam String subject, @RequestParam String text) throws MessagingException {
+        emailService.sendEmailWithAttachment(to, subject, text);
         return "Email with attachment sent successfully to " + to;
     }
 }

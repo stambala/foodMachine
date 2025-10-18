@@ -1,0 +1,15 @@
+ls: List directory contents.
+cd: Change directory.
+pwd: Print working directory.
+mkdir: Create a new directory.
+rmdir: Remove an empty directory.
+cp: Copy files and directories.
+mv: Move or rename files and directories.
+rm: Remove files or directories.
+touch: Create an empty file or update timestamps.
+cat: Concatenate and display file contents.
+less: View file contents interactively (paged).
+head: Display the beginning of a file.
+tail: Display the end of a file.
+find: Search for files and directories.
+ln: Create links (symbolic or hard) to files.
